@@ -1,0 +1,10 @@
+{
+  "expo": {
+    "name": "react-native-wallet",
+    "slug": "react-native-wallet",
+    "version": "1.0.0",
+    "assetBundlePatterns": [
+      "**/*"
+    ]
+  }
+}
