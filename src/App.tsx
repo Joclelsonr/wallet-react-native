@@ -1,6 +1,6 @@
 import React from "react";
 import { Text, View, ActivityIndicator } from "react-native";
-
+import { ThemeProvider } from "styled-components/native";
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
 import {
@@ -11,6 +11,8 @@ import {
     Poppins_700Bold,
     Poppins_800ExtraBold,
 } from "@expo-google-fonts/poppins";
+
+import THEME from "./styles/theme"
 
 const App: React.FC = () => {
     const [fontsLoaded] = useFonts([
@@ -28,9 +30,11 @@ const App: React.FC = () => {
     }
 
     return (
-        <View>
-            <Text>Wallet App</Text>
-        </View>
+        <ThemeProvider theme={THEME}> 
+            <View>
+                <Text>Wallet App</Text>
+            </View>
+        </ThemeProvider>
     );
 };
 
