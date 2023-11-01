@@ -1,4 +1,5 @@
 import React from "react";
+import { StatusBar } from "expo-status-bar";
 import { Text, View, ActivityIndicator } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
@@ -31,6 +32,7 @@ const App: React.FC = () => {
 
     return (
         <ThemeProvider theme={THEME}> 
+            <StatusBar style="dark" backgroundColor="transparent" translucent />
             <View>
                 <Text>Wallet App</Text>
             </View>
