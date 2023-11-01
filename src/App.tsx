@@ -1,6 +1,6 @@
 import React from "react";
 import { StatusBar } from "expo-status-bar";
-import { Text, View, ActivityIndicator } from "react-native";
+import { View, ActivityIndicator } from "react-native";
 import { ThemeProvider } from "styled-components/native";
 import { DMSans_400Regular } from "@expo-google-fonts/dm-sans";
 import { DMSerifDisplay_400Regular } from "@expo-google-fonts/dm-serif-display";
@@ -15,8 +15,10 @@ import {
 
 import THEME from "./styles/theme"
 
+import Login from "./screens/login";
+
 const App: React.FC = () => {
-    const [fontsLoaded] = useFonts([
+    const [ fontsLoaded ] = useFonts([
         DMSans_400Regular,
         DMSerifDisplay_400Regular,
         Poppins_300Light,
@@ -25,7 +27,7 @@ const App: React.FC = () => {
         Poppins_700Bold,
         Poppins_800ExtraBold,
     ]);
-
+    
     if (!fontsLoaded) {
         return <ActivityIndicator size="large" color="#000" />;
     }
@@ -34,7 +36,7 @@ const App: React.FC = () => {
         <ThemeProvider theme={THEME}> 
             <StatusBar style="dark" backgroundColor="transparent" translucent />
             <View>
-                <Text>Wallet App</Text>
+                <Login />
             </View>
         </ThemeProvider>
     );
